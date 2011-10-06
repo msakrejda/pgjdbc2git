@@ -1,0 +1,85 @@
+--- cvs2git-example.options	2011-10-05 08:47:13.725085583 +0200
++++ c2g.config.py	2011-10-05 09:35:07.704509246 +0200
+@@ -182,16 +182,16 @@
+ # information loss.
+ ctx.cvs_author_decoder = CVSTextDecoder(
+     [
+-        #'utf8',
+-        #'latin1',
++        'utf8',
++        'latin1',
+         'ascii',
+         ],
+     #fallback_encoding='ascii'
+     )
+ ctx.cvs_log_decoder = CVSTextDecoder(
+     [
+-        #'utf8',
+-        #'latin1',
++        'utf8',
++        'latin1',
+         'ascii',
+         ],
+     #fallback_encoding='ascii',
+@@ -201,8 +201,8 @@
+ # Unicode (e.g., maybe not specify a fallback_encoding).
+ ctx.cvs_filename_decoder = CVSTextDecoder(
+     [
+-        #'utf8',
+-        #'latin1',
++        'utf8',
++        'latin1',
+         'ascii',
+         ],
+     #fallback_encoding='ascii'
+@@ -370,7 +370,7 @@
+ # record the original author (for example, the creation of a branch).
+ # This should be a simple (unix-style) username, but it can be
+ # translated into a git-style name by the author_transforms map.
+-ctx.username = 'cvs2svn'
++ctx.username = 'cvs2git'
+ 
+ # ctx.file_property_setters and ctx.revision_property_setters contain
+ # rules used to set the svn properties on files in the converted
+@@ -508,16 +508,22 @@
+ # (name, email).  Please substitute your own project's usernames here
+ # to use with the author_transforms option of GitOutputOption below.
+ author_transforms={
+-    'jrandom' : ('J. Random', 'jrandom@example.com'),
+-    'mhagger' : 'Michael Haggerty <mhagger@alum.mit.edu>',
+-    'brane' : (u'Branko Čibej', 'brane@xbc.nu'),
+-    'ringstrom' : 'Tobias Ringström <tobias@ringstrom.mine.nu>',
+-    'dionisos' : (u'Erik Hülsmann', 'e.huelsmann@gmx.net'),
+-
+-    # This one will be used for commits for which CVS doesn't record
+-    # the original author, as explained above.
+-    'cvs2svn' : 'cvs2svn <admin@example.com>',
+-    }
++'barry': 'barry <>',
++'blind': 'blind <>',
++'cvs2git': 'cvs2git <>',
++'davec': 'davec <>',
++'davecramer': 'davecramer <>',
++'jurka': 'jurka <>',
++'momjian': 'momjian <>',
++'oliver': 'oliver <>',
++'peter': 'peter <>',
++'petere': 'petere <>',
++'pgsql': 'pgsql <>',
++'scrappy': 'scrappy <>',
++'tgl': 'tgl <>',
++'thomas': 'thomas <>',
++'wieck': 'wieck <>',
++}
+ 
+ # This is the main option that causes cvs2svn to output to a
+ # "fastimport"-format dumpfile rather than to Subversion:
+@@ -556,7 +562,7 @@
+     # The filesystem path to the part of the CVS repository (*not* a
+     # CVS working copy) that should be converted.  This may be a
+     # subdirectory (i.e., a module) within a larger CVS repository.
+-    r'test-data/main-cvsrepos',
++    r'pgjdbc',
+ 
+     # A list of symbol transformations that can be used to rename
+     # symbols in this project.
