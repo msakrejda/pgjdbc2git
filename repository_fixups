@@ -1,0 +1,211 @@
+#!/bin/bash
+
+set -e
+
+jdbc0=./pgjdbc
+jdbc=./pgjdbc.fixed
+
+rm -rf $jdbc
+cp -a $jdbc0 $jdbc
+
+# Relabel tag REL7_1 as REL7_1_BETA in various files that were deleted between
+# the original placement of that tag and its renaming.  The renaming action
+# evidently missed files that'd been deleted in between.
+rcs -x,v -nREL7_1_BETA:REL7_1 $jdbc/Attic/README_6.3
+rcs -x,v -nREL7_1_BETA:REL7_1 $jdbc/org/postgresql/xa/Attic/Test.java
+rcs -x,v -nREL7_1_BETA:REL7_1 $jdbc/postgresql/Attic/Connection.java
+rcs -x,v -nREL7_1_BETA:REL7_1 $jdbc/postgresql/Attic/Driver.java
+rcs -x,v -nREL7_1_BETA:REL7_1 $jdbc/postgresql/Attic/Field.java
+rcs -x,v -nREL7_1_BETA:REL7_1 $jdbc/postgresql/Attic/PG_Stream.java
+rcs -x,v -nREL7_1_BETA:REL7_1 $jdbc/postgresql/Attic/ResultSet.java
+rcs -x,v -nREL7_1_BETA:REL7_1 $jdbc/postgresql/Attic/errors.properties
+rcs -x,v -nREL7_1_BETA:REL7_1 $jdbc/postgresql/Attic/errors_fr.properties
+rcs -x,v -nREL7_1_BETA:REL7_1 $jdbc/postgresql/fastpath/Attic/Fastpath.java
+rcs -x,v -nREL7_1_BETA:REL7_1 $jdbc/postgresql/fastpath/Attic/FastpathArg.java
+rcs -x,v -nREL7_1_BETA:REL7_1 $jdbc/postgresql/geometric/Attic/PGbox.java
+rcs -x,v -nREL7_1_BETA:REL7_1 $jdbc/postgresql/geometric/Attic/PGcircle.java
+rcs -x,v -nREL7_1_BETA:REL7_1 $jdbc/postgresql/geometric/Attic/PGline.java
+rcs -x,v -nREL7_1_BETA:REL7_1 $jdbc/postgresql/geometric/Attic/PGlseg.java
+rcs -x,v -nREL7_1_BETA:REL7_1 $jdbc/postgresql/geometric/Attic/PGpath.java
+rcs -x,v -nREL7_1_BETA:REL7_1 $jdbc/postgresql/geometric/Attic/PGpoint.java
+rcs -x,v -nREL7_1_BETA:REL7_1 $jdbc/postgresql/geometric/Attic/PGpolygon.java
+rcs -x,v -nREL7_1_BETA:REL7_1 $jdbc/postgresql/jdbc1/Attic/CallableStatement.java
+rcs -x,v -nREL7_1_BETA:REL7_1 $jdbc/postgresql/jdbc1/Attic/Connection.java
+rcs -x,v -nREL7_1_BETA:REL7_1 $jdbc/postgresql/jdbc1/Attic/DatabaseMetaData.java
+rcs -x,v -nREL7_1_BETA:REL7_1 $jdbc/postgresql/jdbc1/Attic/PreparedStatement.java
+rcs -x,v -nREL7_1_BETA:REL7_1 $jdbc/postgresql/jdbc1/Attic/ResultSet.java
+rcs -x,v -nREL7_1_BETA:REL7_1 $jdbc/postgresql/jdbc1/Attic/ResultSetMetaData.java
+rcs -x,v -nREL7_1_BETA:REL7_1 $jdbc/postgresql/jdbc1/Attic/Statement.java
+rcs -x,v -nREL7_1_BETA:REL7_1 $jdbc/postgresql/jdbc2/Attic/CallableStatement.java
+rcs -x,v -nREL7_1_BETA:REL7_1 $jdbc/postgresql/jdbc2/Attic/Connection.java
+rcs -x,v -nREL7_1_BETA:REL7_1 $jdbc/postgresql/jdbc2/Attic/DatabaseMetaData.java
+rcs -x,v -nREL7_1_BETA:REL7_1 $jdbc/postgresql/jdbc2/Attic/PreparedStatement.java
+rcs -x,v -nREL7_1_BETA:REL7_1 $jdbc/postgresql/jdbc2/Attic/ResultSet.java
+rcs -x,v -nREL7_1_BETA:REL7_1 $jdbc/postgresql/jdbc2/Attic/ResultSetMetaData.java
+rcs -x,v -nREL7_1_BETA:REL7_1 $jdbc/postgresql/jdbc2/Attic/Statement.java
+rcs -x,v -nREL7_1_BETA:REL7_1 $jdbc/postgresql/largeobject/Attic/LargeObject.java
+rcs -x,v -nREL7_1_BETA:REL7_1 $jdbc/postgresql/largeobject/Attic/LargeObjectManager.java
+rcs -x,v -nREL7_1_BETA:REL7_1 $jdbc/postgresql/util/Attic/PGmoney.java
+rcs -x,v -nREL7_1_BETA:REL7_1 $jdbc/postgresql/util/Attic/PGobject.java
+rcs -x,v -nREL7_1_BETA:REL7_1 $jdbc/postgresql/util/Attic/PGtokenizer.java
+rcs -x,v -nREL7_1_BETA:REL7_1 $jdbc/postgresql/util/Attic/PSQLException.java
+rcs -x,v -nREL7_1_BETA:REL7_1 $jdbc/postgresql/util/Attic/Serialize.java
+rcs -x,v -nREL7_1_BETA:REL7_1 $jdbc/postgresql/util/Attic/UnixCrypt.java
+
+rcs -x,v -nREL7_1 $jdbc/Attic/README_6.3
+rcs -x,v -nREL7_1 $jdbc/org/postgresql/xa/Attic/Test.java
+rcs -x,v -nREL7_1 $jdbc/postgresql/Attic/Connection.java
+rcs -x,v -nREL7_1 $jdbc/postgresql/Attic/Driver.java
+rcs -x,v -nREL7_1 $jdbc/postgresql/Attic/Field.java
+rcs -x,v -nREL7_1 $jdbc/postgresql/Attic/PG_Stream.java
+rcs -x,v -nREL7_1 $jdbc/postgresql/Attic/ResultSet.java
+rcs -x,v -nREL7_1 $jdbc/postgresql/Attic/errors.properties
+rcs -x,v -nREL7_1 $jdbc/postgresql/Attic/errors_fr.properties
+rcs -x,v -nREL7_1 $jdbc/postgresql/fastpath/Attic/Fastpath.java
+rcs -x,v -nREL7_1 $jdbc/postgresql/fastpath/Attic/FastpathArg.java
+rcs -x,v -nREL7_1 $jdbc/postgresql/geometric/Attic/PGbox.java
+rcs -x,v -nREL7_1 $jdbc/postgresql/geometric/Attic/PGcircle.java
+rcs -x,v -nREL7_1 $jdbc/postgresql/geometric/Attic/PGline.java
+rcs -x,v -nREL7_1 $jdbc/postgresql/geometric/Attic/PGlseg.java
+rcs -x,v -nREL7_1 $jdbc/postgresql/geometric/Attic/PGpath.java
+rcs -x,v -nREL7_1 $jdbc/postgresql/geometric/Attic/PGpoint.java
+rcs -x,v -nREL7_1 $jdbc/postgresql/geometric/Attic/PGpolygon.java
+rcs -x,v -nREL7_1 $jdbc/postgresql/jdbc1/Attic/CallableStatement.java
+rcs -x,v -nREL7_1 $jdbc/postgresql/jdbc1/Attic/Connection.java
+rcs -x,v -nREL7_1 $jdbc/postgresql/jdbc1/Attic/DatabaseMetaData.java
+rcs -x,v -nREL7_1 $jdbc/postgresql/jdbc1/Attic/PreparedStatement.java
+rcs -x,v -nREL7_1 $jdbc/postgresql/jdbc1/Attic/ResultSet.java
+rcs -x,v -nREL7_1 $jdbc/postgresql/jdbc1/Attic/ResultSetMetaData.java
+rcs -x,v -nREL7_1 $jdbc/postgresql/jdbc1/Attic/Statement.java
+rcs -x,v -nREL7_1 $jdbc/postgresql/jdbc2/Attic/CallableStatement.java
+rcs -x,v -nREL7_1 $jdbc/postgresql/jdbc2/Attic/Connection.java
+rcs -x,v -nREL7_1 $jdbc/postgresql/jdbc2/Attic/DatabaseMetaData.java
+rcs -x,v -nREL7_1 $jdbc/postgresql/jdbc2/Attic/PreparedStatement.java
+rcs -x,v -nREL7_1 $jdbc/postgresql/jdbc2/Attic/ResultSet.java
+rcs -x,v -nREL7_1 $jdbc/postgresql/jdbc2/Attic/ResultSetMetaData.java
+rcs -x,v -nREL7_1 $jdbc/postgresql/jdbc2/Attic/Statement.java
+rcs -x,v -nREL7_1 $jdbc/postgresql/largeobject/Attic/LargeObject.java
+rcs -x,v -nREL7_1 $jdbc/postgresql/largeobject/Attic/LargeObjectManager.java
+rcs -x,v -nREL7_1 $jdbc/postgresql/util/Attic/PGmoney.java
+rcs -x,v -nREL7_1 $jdbc/postgresql/util/Attic/PGobject.java
+rcs -x,v -nREL7_1 $jdbc/postgresql/util/Attic/PGtokenizer.java
+rcs -x,v -nREL7_1 $jdbc/postgresql/util/Attic/PSQLException.java
+rcs -x,v -nREL7_1 $jdbc/postgresql/util/Attic/Serialize.java
+rcs -x,v -nREL7_1 $jdbc/postgresql/util/Attic/UnixCrypt.java
+
+# Finally, manually patch assorted files in which the file was added to
+# mainline and then back-patched into release branches at a significantly
+# later point.  The CVS repository fails to show that these files didn't
+# exist on the back branch right along, so we need a hack to show that.
+# NOTE: the log messages for the dead revisions must match a regexp
+# inside cvs2git, or it won't do what we want with these.
+
+
+cd $jdbc
+
+chmod u+w org/postgresql/Attic/errors_pt_BR.properties,v
+chmod u+w org/postgresql/test/jdbc2/OID74Test.java,v
+
+patch -p0 <<EOFEOF
+diff -cra org/postgresql/Attic/errors_pt_BR.properties,v org/postgresql/Attic/errors_pt_BR.properties,v
+*** org/postgresql/Attic/errors_pt_BR.properties,v	Thu May 13 23:45:02 2010
+--- org/postgresql/Attic/errors_pt_BR.properties,v	Mon Sep 13 19:30:34 2010
+***************
+*** 44,52 ****
+  1.1
+  date	2003.11.14.23.59.12;	author petere;	state Exp;
+  branches
+! 	1.1.2.1;
+  next	;
+  
+  1.1.2.1
+  date	2003.11.15.10.20.02;	author petere;	state Exp;
+  branches;
+--- 44,57 ----
+  1.1
+  date	2003.11.14.23.59.12;	author petere;	state Exp;
+  branches
+! 	1.1.2.0;
+  next	;
+  
++ 1.1.2.0
++ date	2003.11.14.23.59.12;	author petere;	state dead;
++ branches;
++ next	1.1.2.1;
++ 
+  1.1.2.1
+  date	2003.11.15.10.20.02;	author petere;	state Exp;
+  branches;
+***************
+*** 198,203 ****
+--- 203,216 ----
+  @@
+  
+  
++ 1.1.2.0
++ log
++ @file  was added on branch  on 0000-00-00 00:00:00
++ @
++ text
++ @@
++ 
++ 
+  1.1.2.1
+  log
+  @Translation updates
+diff -cra org/postgresql/test/jdbc2/OID74Test.java,v org/postgresql/test/jdbc2/OID74Test.java,v
+*** org/postgresql/test/jdbc2/OID74Test.java,v	Thu May 13 23:45:02 2010
+--- org/postgresql/test/jdbc2/OID74Test.java,v	Mon Sep 13 19:28:16 2010
+***************
+*** 48,54 ****
+  1.2
+  date	2003.12.17.15.45.05;	author davec;	state Exp;
+  branches
+! 	1.2.2.1;
+  next	1.1;
+  
+  1.1
+--- 48,54 ----
+  1.2
+  date	2003.12.17.15.45.05;	author davec;	state Exp;
+  branches
+! 	1.2.2.0;
+  next	1.1;
+  
+  1.1
+***************
+*** 56,61 ****
+--- 56,66 ----
+  branches;
+  next	;
+  
++ 1.2.2.0
++ date	2003.12.17.15.45.05;	author davec;	state dead;
++ branches;
++ next	1.2.2.1;
++ 
+  1.2.2.1
+  date	2003.12.17.15.48.40;	author davec;	state Exp;
+  branches;
+***************
+*** 286,291 ****
+--- 291,304 ----
+  @
+  
+  
++ 1.2.2.0
++ log
++ @file  was added on branch  on 0000-00-00 00:00:00
++ @
++ text
++ @@
++ 
++ 
+  1.2.2.1
+  log
+  @back patching fix for compat 7.1 binary stream issues with the new protocol
+EOFEOF
+
+chmod u-w org/postgresql/Attic/errors_pt_BR.properties,v
+chmod u-w org/postgresql/test/jdbc2/OID74Test.java,v
+
