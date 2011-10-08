@@ -1,29 +1,27 @@
-#! /bin/sh
+#!/bin/bash
 
-repo=mkz@cvs.pgfoundry.org:/cvsroot/jdbc
-c2g=/opt/src/vcs/cvs2svn/cvs2git
-dst=git@github.com:markokr/pgjdbc-test.git
+set -e
 
+tar_file=$1
 
-rsync -avz --delete $repo/pgjdbc .
+if [ ! -f "$tar_file" ]
+then
+	echo "Expected path to PostgreSQL JDBC CVS export; got '$tar_file'"
+	exit 1
+fi
 
-rm -rf cvs2svn-tmp pgjdbc.git
-mkdir -p cvs2svn-tmp pgjdbc.git
+tar -zxf "$tar_file"
+mv pgjdbc CVSROOT
 
-$c2g --options=c2g.config.py
+cvs2git --dumpfile=dumpfile.dat --blobfile=blobfile.dat --username=repoadmin CVSROOT --encoding=iso-8859-15
 
-# create repo
+mkdir pgjdbc.git
 cd pgjdbc.git
-git init
-cat ../cvs2svn-tmp/git-blob.dat ../cvs2svn-tmp/git-dump.dat | git fast-import
+git init --bare
+cat ../blobfile.dat ../dumpfile.dat | git fast-import
 
-# compress better
-git repack -a -d -f
+cd ..
 
-# checkout source
-git checkout master
+git clone pgjdbc.git pgjdbc-non-bare
 
-# push somewhere
-git remote add dst $dst
-git push -f --mirror dst
 
