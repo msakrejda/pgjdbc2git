@@ -518,7 +518,7 @@ author_transforms={
   'oliver': ('Oliver Jowett', 'oliver@opencloud.com'),
   'peter' : ('Peter Mount', 'peter@retep.org.uk'),
   'petere' : ('Peter Eisentraut', 'peter_e@gmx.net'),
-  'pgsql' : ('PostgreSQL Daemon', 'webmaster@postgresql.org'),
+  'pgsql' : ('Marc G. Fournier', 'scrappy@hub.org'),
   'scrappy' : ('Marc G. Fournier', 'scrappy@hub.org'),
   'tgl' : ('Tom Lane', 'tgl@sss.pgh.pa.us'),
   'thomas' : ('Thomas G. Lockhart', 'lockhart@fourpalms.org'),
