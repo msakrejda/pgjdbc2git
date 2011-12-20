@@ -20,7 +20,7 @@ then
 fi
 
 # Clean up and extract a fresh copy from the CVS repository archive
-rm -rf pgjdbc pgjdbc.git pgjdbc-checkout cvs2svn-tmp
+rm -rf CVSROOT pgjdbc.git pgjdbc-checkout cvs2svn-tmp
 tar -zxf "$tar_file"
 
 # Relabel tag REL7_1 as REL7_1_BETA in various files that were deleted between
@@ -124,6 +124,9 @@ do
     chmod u-w $patched_files
 	popd
 done
+
+mkdir CVSROOT
+mv pgjdbc CVSROOT
 
 $CVS2GIT_HOME/cvs2git --options=c2g.config.py --encoding=iso-8859-15
 
