@@ -1,0 +1,109 @@
+diff -cra org/postgresql/test/jdbc2/CopyTest.java,v org/postgresql/test/jdbc2/CopyTest.java,v
+*** org/postgresql/test/jdbc2/CopyTest.java,v	2011-09-10 18:38:46.000000000 -0700
+--- org/postgresql/test/jdbc2/CopyTest.java,v	2011-12-19 20:52:24.805702327 -0800
+***************
+*** 65,73 ****
+  1.1
+  date	2008.01.28.10.08.58;	author jurka;	state Exp;
+  branches
+! 	1.1.2.1
+! 	1.1.4.1
+! 	1.1.6.1;
+  next	;
+  
+  1.2.2.1
+--- 65,73 ----
+  1.1
+  date	2008.01.28.10.08.58;	author jurka;	state Exp;
+  branches
+! 	1.1.2.0
+! 	1.1.4.0
+! 	1.1.6.0;
+  next	;
+  
+  1.2.2.1
+***************
+*** 80,95 ****
+--- 80,110 ----
+  branches;
+  next	;
+  
++ 1.1.2.0
++ date	2008.01.28.10.08.58;	author jurka;	state dead;
++ branches;
++ next	1.1.2.1;
++ 
+  1.1.2.1
+  date	2008.01.28.10.09.16;	author jurka;	state Exp;
+  branches;
+  next	;
+  
++ 1.1.4.0
++ date	2008.01.28.10.08.58;	author jurka;	state dead;
++ branches;
++ next	1.1.4.1;
++ 
+  1.1.4.1
+  date	2008.01.28.10.09.38;	author jurka;	state Exp;
+  branches;
+  next	;
+  
++ 1.1.6.0
++ date	2008.01.28.10.08.58;	author jurka;	state dead;
++ branches;
++ next	1.1.6.1;
++ 
+  1.1.6.1
+  date	2008.01.28.10.10.11;	author jurka;	state Exp;
+  branches;
+***************
+*** 598,603 ****
+--- 613,626 ----
+  @
+  
+  
++ 1.1.6.0
++ log
++ @file CopyTest.java was added on branch REL8_0_STABLE on 2008-01-28 10:09:16
++ @
++ text
++ @@
++ 
++ 
+  1.1.6.1
+  log
+  @While the driver currently doesn't support the copy protocol, it
+***************
+*** 610,615 ****
+--- 633,646 ----
+  @@
+  
+  
++ 1.1.4.0
++ log
++ @file CopyTest.java was added on branch REL8_1_STABLE on 2008-01-28 10:09:16
++ @
++ text
++ @@
++ 
++ 
+  1.1.4.1
+  log
+  @While the driver currently doesn't support the copy protocol, it
+***************
+*** 620,625 ****
+--- 651,664 ----
+  @
+  text
+  @@
++ 
++ 
++ 1.1.2.0
++ log
++ @file CopyTest.java was added on branch REL8_2_STABLE on 2008-01-28 10:09:16
++ @
++ text
++ @@
+  
+  
+  1.1.2.1

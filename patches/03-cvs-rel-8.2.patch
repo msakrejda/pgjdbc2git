@@ -1,0 +1,45 @@
+diff -cra org/postgresql/translation/zh_CN.po,v org/postgresql/translation/zh_CN.po,v
+*** org/postgresql/translation/zh_CN.po,v	2011-09-10 18:38:48.000000000 -0700
+--- org/postgresql/translation/zh_CN.po,v	2011-12-20 00:27:50.655377946 -0800
+***************
+*** 66,74 ****
+  1.1
+  date	2005.05.17.17.47.09;	author jurka;	state Exp;
+  branches
+! 	1.1.2.1;
+  next	;
+  
+  1.1.2.1
+  date	2005.05.17.17.48.10;	author jurka;	state Exp;
+  branches;
+--- 66,79 ----
+  1.1
+  date	2005.05.17.17.47.09;	author jurka;	state Exp;
+  branches
+! 	1.1.2.0;
+  next	;
+  
++ 1.1.2.0
++ date	2005.05.17.17.47.09;	author jurka;	state dead;
++ branches;
++ next	1.1.2.1;
++ 
+  1.1.2.1
+  date	2005.05.17.17.48.10;	author jurka;	state Exp;
+  branches;
+***************
+*** 2174,2179 ****
+--- 2179,2191 ----
+  #~ msgstr "查询没有结果返回。"
+  @
+  
++ 1.1.2.0
++ log
++ @file zh_CN.po was added on branch REL8_2_STABLE on 2005-05-17 17:48:10
++ @
++ text
++ @@
++ 
+  
+  1.1.2.1
+  log

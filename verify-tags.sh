@@ -6,14 +6,14 @@ set -e
 rm -rf cvs-co
 mkdir cvs-co
 pushd cvs-co
-(cd ../pgjdbc-non-bare && git tag -l ) | while read tag
+(cd ../pgjdbc-checkout && git tag -l ) | while read tag
 do
     cvs co -r "$tag" -d "$tag" pgjdbc
 done
 popd
 
 # Verify that the tags are correct.
-pushd pgjdbc-non-bare
+pushd pgjdbc-checkout
 git tag -l | while read tag
 do 
     git checkout $tag

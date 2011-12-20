@@ -1,0 +1,97 @@
+diff -cra org/postgresql/Attic/errors_pt_BR.properties,v org/postgresql/Attic/errors_pt_BR.properties,v
+*** org/postgresql/Attic/errors_pt_BR.properties,v	Thu May 13 23:45:02 2010
+--- org/postgresql/Attic/errors_pt_BR.properties,v	Mon Sep 13 19:30:34 2010
+***************
+*** 44,52 ****
+  1.1
+  date	2003.11.14.23.59.12;	author petere;	state Exp;
+  branches
+! 	1.1.2.1;
+  next	;
+  
+  1.1.2.1
+  date	2003.11.15.10.20.02;	author petere;	state Exp;
+  branches;
+--- 44,57 ----
+  1.1
+  date	2003.11.14.23.59.12;	author petere;	state Exp;
+  branches
+! 	1.1.2.0;
+  next	;
+  
++ 1.1.2.0
++ date	2003.11.14.23.59.12;	author petere;	state dead;
++ branches;
++ next	1.1.2.1;
++ 
+  1.1.2.1
+  date	2003.11.15.10.20.02;	author petere;	state Exp;
+  branches;
+***************
+*** 198,203 ****
+--- 203,216 ----
+  @@
+  
+  
++ 1.1.2.0
++ log
++ @file errors_pt_BR.properties was added on branch REL7_4_STABLE on 2003-11-15 10:20:02
++ @
++ text
++ @@
++ 
++ 
+  1.1.2.1
+  log
+  @Translation updates
+diff -cra org/postgresql/test/jdbc2/OID74Test.java,v org/postgresql/test/jdbc2/OID74Test.java,v
+*** org/postgresql/test/jdbc2/OID74Test.java,v	Thu May 13 23:45:02 2010
+--- org/postgresql/test/jdbc2/OID74Test.java,v	Mon Sep 13 19:28:16 2010
+***************
+*** 48,54 ****
+  1.2
+  date	2003.12.17.15.45.05;	author davec;	state Exp;
+  branches
+! 	1.2.2.1;
+  next	1.1;
+  
+  1.1
+--- 48,54 ----
+  1.2
+  date	2003.12.17.15.45.05;	author davec;	state Exp;
+  branches
+! 	1.2.2.0;
+  next	1.1;
+  
+  1.1
+***************
+*** 56,61 ****
+--- 56,66 ----
+  branches;
+  next	;
+  
++ 1.2.2.0
++ date	2003.12.17.15.45.05;	author davec;	state dead;
++ branches;
++ next	1.2.2.1;
++ 
+  1.2.2.1
+  date	2003.12.17.15.48.40;	author davec;	state Exp;
+  branches;
+***************
+*** 286,291 ****
+--- 291,304 ----
+  @
+  
+  
++ 1.2.2.0
++ log
++ @file OID74Test.java was added on branch REL7_4_STABLE on 2003-12-17 15:48:40
++ @
++ text
++ @@
++ 
++ 
+  1.2.2.1
+  log
+  @back patching fix for compat 7.1 binary stream issues with the new protocol
