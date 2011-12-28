@@ -1,0 +1,46 @@
+diff -cra org/postgresql/translation/sr.po,v org/postgresql/translation/sr.po,v
+*** org/postgresql/translation/sr.po,v	2011-09-10 18:38:48.000000000 -0700
+--- org/postgresql/translation/sr.po,v	2011-12-27 16:21:58.997369452 -0800
+***************
+*** 42,50 ****
+  1.1
+  date	2007.01.04.20.28.37;	author jurka;	state Exp;
+  branches
+! 	1.1.2.1;
+  next	;
+  
+  1.1.2.1
+  date	2007.01.04.20.28.54;	author jurka;	state Exp;
+  branches;
+--- 42,55 ----
+  1.1
+  date	2007.01.04.20.28.37;	author jurka;	state Exp;
+  branches
+! 	1.1.2.0;
+  next	;
+  
++ 1.1.2.0
++ date	2007.01.04.20.28.37;	author jurka;	state dead;
++ branches;
++ next	1.1.2.1;
++ 
+  1.1.2.1
+  date	2007.01.04.20.28.54;	author jurka;	state Exp;
+  branches;
+***************
+*** 2129,2134 ****
+--- 2134,2147 ----
+  @
+  
+  
++ 1.1.2.0
++ log
++ @file sr.po was added on branch REL8_2_STABLE on 2007-01-04 20:28:54
++ @
++ text
++ @@
++ 
++ 
+  1.1.2.1
+  log
+  @Add Serbian translation.

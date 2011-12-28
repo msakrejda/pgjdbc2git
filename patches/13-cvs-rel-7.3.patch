@@ -1,0 +1,45 @@
+diff -cra utils/Attic/changelog.pl,v utils/Attic/changelog.pl,v
+*** utils/Attic/changelog.pl,v	2003-01-29 15:30:11.000000000 -0800
+--- utils/Attic/changelog.pl,v	2011-12-27 17:21:08.694971457 -0800
+***************
+*** 31,39 ****
+  1.1
+  date	2000.10.12.08.55.28;	author peter;	state Exp;
+  branches
+! 	1.1.6.1;
+  next	;
+  
+  1.1.6.1
+  date	2002.11.04.21.24.29;	author tgl;	state dead;
+  branches;
+--- 31,44 ----
+  1.1
+  date	2000.10.12.08.55.28;	author peter;	state Exp;
+  branches
+! 	1.1.6.0;
+  next	;
+  
++ 1.1.6.0
++ date	2000.10.12.08.55.28;	author tgl;	state dead;
++ branches;
++ next	1.1.6.1;
++ 
+  1.1.6.1
+  date	2002.11.04.21.24.29;	author tgl;	state dead;
+  branches;
+***************
+*** 91,96 ****
+--- 96,108 ----
+  @
+  text
+  @@
++ 
++ 1.1.6.0
++ log
++ @file changelog.pl was added on branch REL7_3_STABLE on 2002-11-04 21:24:29
++ @
++ text
++ @@
+  
+  
+  1.1.6.1

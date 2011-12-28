@@ -139,3 +139,8 @@ cd ..
 
 git clone pgjdbc.git pgjdbc-checkout
 
+# Something like the following can be used to change the IDENTIFIER tags that
+# JDBC uses into just the file names (as the PostgreSQL core project did)
+#
+# find -type f | xargs sed -i -r 's/\$PostgreSQL: pgjdbc\/(.*),v .*\$\s*$/\1/'
+#

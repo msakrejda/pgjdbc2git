@@ -1,0 +1,79 @@
+diff -cra org/postgresql/xa/PGXADataSourceFactory.java,v org/postgresql/xa/PGXADataSourceFactory.java,v
+*** org/postgresql/xa/PGXADataSourceFactory.java,v	2011-09-10 18:38:49.000000000 -0700
+--- org/postgresql/xa/PGXADataSourceFactory.java,v	2011-12-27 15:44:24.442189715 -0800
+***************
+*** 50,64 ****
+  1.1
+  date	2007.02.26.19.24.33;	author jurka;	state Exp;
+  branches
+! 	1.1.2.1
+! 	1.1.4.1;
+  next	;
+  
+  1.1.2.1
+  date	2007.02.26.19.24.41;	author jurka;	state Exp;
+  branches;
+  next	;
+  
+  1.1.4.1
+  date	2007.02.26.19.24.46;	author jurka;	state Exp;
+  branches;
+--- 50,74 ----
+  1.1
+  date	2007.02.26.19.24.33;	author jurka;	state Exp;
+  branches
+! 	1.1.2.0
+! 	1.1.4.0;
+  next	;
+  
++ 1.1.2.0
++ date	2007.02.26.19.24.33;	author jurka;	state dead;
++ branches;
++ next	1.1.2.1;
++ 
+  1.1.2.1
+  date	2007.02.26.19.24.41;	author jurka;	state Exp;
+  branches;
+  next	;
+  
++ 1.1.4.0
++ date	2007.02.26.19.24.33;	author jurka;	state dead;
++ branches;
++ next	1.1.4.1;
++ 
+  1.1.4.1
+  date	2007.02.26.19.24.46;	author jurka;	state Exp;
+  branches;
+***************
+*** 156,161 ****
+--- 166,178 ----
+  *   $PostgreSQL$
+  @
+  
++ 1.1.4.0
++ log
++ @file PGXADataSourceFactory.java was added on branch REL8_1_STABLE on 2007-02-26 19:24:46
++ @
++ text
++ @@
++ 
+  
+  1.1.4.1
+  log
+***************
+*** 168,173 ****
+--- 185,198 ----
+  @
+  text
+  @@
++ 
++ 
++ 1.1.2.0
++ log
++ @file PGXADataSourceFactory.java was added on branch REL8_2_STABLE on 2007-02-26 19:24:41
++ @
++ text
++ @@
+  
+  
+  1.1.2.1

@@ -1,0 +1,51 @@
+diff -cra utils/Attic/CheckVersion.java,v utils/Attic/CheckVersion.java,v
+*** utils/Attic/CheckVersion.java,v	2003-01-29 15:30:11.000000000 -0800
+--- utils/Attic/CheckVersion.java,v	2011-12-27 17:14:18.752938656 -0800
+***************
+*** 31,37 ****
+  1.4
+  date	2001.11.19.22.43.13;	author momjian;	state Exp;
+  branches
+! 	1.4.4.1;
+  next	1.3;
+  
+  1.3
+--- 31,37 ----
+  1.4
+  date	2001.11.19.22.43.13;	author momjian;	state Exp;
+  branches
+! 	1.4.4.0;
+  next	1.3;
+  
+  1.3
+***************
+*** 49,54 ****
+--- 49,59 ----
+  branches;
+  next	;
+  
++ 1.4.4.0
++ date	2001.11.19.22.43.13;	author tgl;	state dead;
++ branches;
++ next	1.4.4.1;
++ 
+  1.4.4.1
+  date	2002.11.04.21.24.29;	author tgl;	state dead;
+  branches;
+***************
+*** 156,161 ****
+--- 161,174 ----
+  @
+  text
+  @@
++ 
++ 
++ 1.4.4.0
++ log
++ @file CheckVersion.java was added on branch REL7_3_STABLE on 2002-11-04 21:24:29
++ @
++ text
++ @@
+  
+  
+  1.4.4.1

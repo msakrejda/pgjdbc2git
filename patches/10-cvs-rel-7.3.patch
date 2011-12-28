@@ -1,0 +1,50 @@
+diff -cra Attic/jdbc.jpx,v Attic/jdbc.jpx,v
+*** Attic/jdbc.jpx,v	2003-01-29 15:30:09.000000000 -0800
+--- Attic/jdbc.jpx,v	2011-12-27 17:09:23.447474322 -0800
+***************
+*** 28,34 ****
+  1.7
+  date	2001.05.11.01.46.33;	author momjian;	state Exp;
+  branches
+! 	1.7.4.1;
+  next	1.6;
+  
+  1.6
+--- 28,34 ----
+  1.7
+  date	2001.05.11.01.46.33;	author momjian;	state Exp;
+  branches
+! 	1.7.4.0;
+  next	1.6;
+  
+  1.6
+***************
+*** 61,66 ****
+--- 61,71 ----
+  branches;
+  next	;
+  
++ 1.7.4.0
++ date	2001.05.11.01.46.33;	author tgl;	state dead;
++ branches;
++ next	1.7.4.1;
++ 
+  1.7.4.1
+  date	2002.11.04.21.24.29;	author tgl;	state dead;
+  branches;
+***************
+*** 125,130 ****
+--- 130,142 ----
+  @
+  text
+  @@
++ 
++ 1.7.4.0
++ log
++ @file jdbc.jpx was added on branch REL7_3_STABLE on 2002-11-04 21:24:29
++ @
++ text
++ @@
+  
+  
+  1.7.4.1
