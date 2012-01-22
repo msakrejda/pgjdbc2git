@@ -1,0 +1,21 @@
+diff -cra org/postgresql/test/jdbc4/LOBTest.java,v org/postgresql/test/jdbc4/LOBTest.java,v
+*** org/postgresql/test/jdbc4/LOBTest.java,v	2011-12-13 20:50:39.894872411 -0800
+--- org/postgresql/test/jdbc4/LOBTest.java,v	2012-01-22 15:35:16.916965302 -0800
+***************
+*** 15,22 ****
+  	REL8_4_701:1.2
+  	REL8_3_604:1.2
+  	REL8_3_603:1.2
+! 	REL8_3_STABLE:1.2.0.2
+! 	REL8_2_505:1.1;
+  locks; strict;
+  comment	@# @;
+  
+--- 15,21 ----
+  	REL8_4_701:1.2
+  	REL8_3_604:1.2
+  	REL8_3_603:1.2
+! 	REL8_3_STABLE:1.2.0.2;
+  locks; strict;
+  comment	@# @;
+  

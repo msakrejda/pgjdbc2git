@@ -1,0 +1,21 @@
+diff -cra META-INF/services/java.sql.Driver,v
+*** META-INF/services/java.sql.Driver,v	2011-12-13 20:50:39.126868599 -0800
+--- META-INF/services/java.sql.Driver,v	2012-01-22 15:30:23.611510890 -0800
+***************
+*** 15,22 ****
+  	REL8_4_701:1.1
+  	REL8_3_604:1.1
+  	REL8_3_603:1.1
+! 	REL8_3_STABLE:1.1.0.2
+! 	REL8_2_505:1.1;
+  locks; strict;
+  comment	@# @;
+  
+--- 15,21 ----
+  	REL8_4_701:1.1
+  	REL8_3_604:1.1
+  	REL8_3_603:1.1
+! 	REL8_3_STABLE:1.1.0.2;
+  locks; strict;
+  comment	@# @;
+  
