@@ -139,6 +139,14 @@ cd ..
 
 git clone pgjdbc.git pgjdbc-checkout
 
+# Fix up the REL6_4 branch, which cvs2git puts in the wrong place (it's easier
+# to fix here than in CVS):
+cd pgjdbc-checkout
+git checkout -b REL6_4 $(git log --format='%H' --grep 'Remove various files that were moved to various subdirectories...')
+git push --force origin REL6_4
+git checkout master
+git branch -d REL6_4
+
 # Something like the following can be used to change the IDENTIFIER tags that
 # JDBC uses into just the file names (as the PostgreSQL core project did)
 #
