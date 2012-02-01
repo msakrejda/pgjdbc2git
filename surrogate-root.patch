@@ -1,0 +1,66 @@
+Index: cvs2svn_lib/dvcs_common.py
+===================================================================
+--- cvs2svn_lib/dvcs_common.py	(revision 5379)
++++ cvs2svn_lib/dvcs_common.py	(working copy)
+@@ -75,6 +75,7 @@
+         symbol_transforms=None,
+         symbol_strategy_rules=[],
+         exclude_paths=[],
++        project_cvs_surrogate_root=None
+         ):
+     """Set the project to be converted.
+ 
+@@ -92,6 +93,7 @@
+         project_cvs_repos_path,
+         symbol_transforms=symbol_transforms,
+         exclude_paths=exclude_paths,
++        cvs_surrogate_root=project_cvs_surrogate_root
+         )
+ 
+     self.projects = [project]
+Index: cvs2svn_lib/project.py
+===================================================================
+--- cvs2svn_lib/project.py	(revision 5379)
++++ cvs2svn_lib/project.py	(working copy)
+@@ -54,6 +54,7 @@
+         initial_directories=[],
+         symbol_transforms=None,
+         exclude_paths=[],
++        cvs_surrogate_root=None
+         ):
+     """Create a new Project record.
+ 
+@@ -72,6 +73,11 @@
+     the conversion.  The paths should be relative to
+     PROJECT_CVS_REPOS_PATH and use slashes ('/').  Paths for
+     individual files should include the ',v' extension.
++
++    CVS_SURROGATE_REPOS_ROOT can be provided as an substitute for
++    PROJECT_CVS_REPOS_PATH in CVS $Header$ and $Source$ keyword
++    expansion. If this is not provided, the root is determined from
++    PROJECT_CVS_REPOS_PATH.
+     """
+ 
+     self.id = id
+@@ -85,6 +91,8 @@
+         self.determine_repository_root(
+             os.path.abspath(self.project_cvs_repos_path))
+ 
++    self.cvs_surrogate_root = cvs_surrogate_root
++
+     # The SVN directories to add when the project is first created:
+     self._initial_directories = []
+ 
+Index: cvs2svn_lib/keyword_expander.py
+===================================================================
+--- cvs2svn_lib/keyword_expander.py	(revision 5379)
++++ cvs2svn_lib/keyword_expander.py	(working copy)
+@@ -95,7 +95,7 @@
+   def source(self):
+     project = self.cvs_rev.cvs_file.project
+     return '%s/%s%s' % (
+-        project.cvs_repository_root,
++        project.cvs_surrogate_root or project.cvs_repository_root,
+         project.cvs_module,
+         '/'.join(self.cvs_rev.cvs_file.get_path_components(rcs=True)),
+         )

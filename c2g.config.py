@@ -449,7 +449,7 @@ ctx.file_property_setters.extend([
     ConditionalPropertySetter(
         cvs_file_is_binary, KeywordHandlingPropertySetter('untouched'),
         ),
-    KeywordHandlingPropertySetter('collapsed'),
+    KeywordHandlingPropertySetter('expanded'),
 
     ])
 ctx.revision_property_setters.extend([
@@ -563,6 +563,8 @@ run_options.set_project(
     # CVS working copy) that should be converted.  This may be a
     # subdirectory (i.e., a module) within a larger CVS repository.
     r'cvs-repo/pgjdbc',
+
+    project_cvs_surrogate_root='/cvsroot',
 
     # A list of symbol transformations that can be used to rename
     # symbols in this project.

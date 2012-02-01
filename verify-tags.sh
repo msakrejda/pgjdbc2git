@@ -9,19 +9,17 @@ pushd cvs-co
 (cd ../pgjdbc-checkout && git tag -l ) | while read tag
 do
     cvs co -r "$tag" -d "$tag" pgjdbc
+    find -type f | xargs sed -i "s;\\\$Header: $CVSROOT;\$Header: /cvsroot;"
 done
 popd
 
 # Verify that the tags are correct.
+rm -f diff.log
 pushd pgjdbc-checkout
 git tag -l | while read tag
 do 
     git checkout $tag
-	diff -r --exclude=CVS --exclude=.git . ../cvs-co/${tag} \
-			| grep "\$Header:" -v \
-			| egrep -v "^\-\-\-$"  \
-			| egrep -v "^[0-9]+c[0-9]+" \
-			| grep -v "^diff \-r '\-\-exclude" || true # don't fail on diff
+	diff -r --exclude=CVS --exclude=.git . ../cvs-co/${tag} || true # don't fail on diff
 done >> ../diff.log
 popd
 
