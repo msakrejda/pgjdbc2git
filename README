@@ -1,0 +1,57 @@
+Prerequisites:
+
+ * CVS and git clients
+ * Recent (as of 2012-02-01) checkout of cvs2svn (r5379 is required)
+   from http://cvs2svn.tigris.org/svn/cvs2svn/trunk cvs2svn-trunk
+   (user name is 'guest', password empty)
+ * tarball of PostgreSQL JDBC driver CVS repository from http://ejurka.com/pgsql/tmp
+
+Steps:
+
+1. Set CVS2GIT_HOME to point to the root of the cvs2svn checkout
+
+    export CVS2GIT_HOME=/path/to/cvs2svn
+
+2. Patch cvs2git with the patch included here
+
+    patch -p0 -d "$CVS2GIT_HOME"  < surrogate-root.patch
+
+3. Run the main conversion script
+
+    ./convert.sh ../pgjdbc-2012-01-20.tar.gz
+
+   The tail end of the output should look something like this:
+
+     ~/jdbc-to-git/pgjdbc2git
+     Cloning into 'pgjdbc-checkout'...
+     done.
+     Switched to a new branch 'REL6_4'
+     Total 0 (delta 0), reused 0 (delta 0)
+     To /home/maciek/jdbc-to-git/pgjdbc2git/pgjdbc.git
+      + 0739984...45912ad REL6_4 -> REL6_4 (forced update)
+     Switched to branch 'master'
+     Deleted branch REL6_4 (was 45912ad).
+
+4. Run the tag validation script, making sure to set the CVSROOT environment
+   variable to point to the cvs-repo directory:
+
+     CVSROOT=$PWD/cvs-repo ./verify-tags.sh
+
+   The tail end of the output should look something like this:
+
+     Previous HEAD position was 868b04c... Change version to 9.1-901 for release.
+     HEAD is now at 5b19855... The getColumns() method in DataBaseMetaData.java returns a column size of -1 for varchar's.
+     ~/jdbc-to-git/pgjdbc2git
+
+5. Run the post-validation keyword cleanup script:
+
+     ./verify-tags.sh
+
+   The tail end of the output should look something like this:
+
+     Switched to branch 'master'
+     Your branch is behind 'origin/master' by 1 commit, and can be fast-forwarded.
+     Deleted branch squash-keywords (was 6ed0e77).
+
+6. You should now be able to clone from the pgjdbc.git repository, and "install"
+   the repository somewhere else by running "git push --mirror $URL" from pgjdbc.git.
